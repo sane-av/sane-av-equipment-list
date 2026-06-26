@@ -1,0 +1,75 @@
+name: New Equipment Entry
+description: Submit a new equipment entry to the database
+title: "[New] "
+labels: ["new-entry"]
+body:
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      placeholder: "e.g., Crown Audio"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: "e.g., XTi 4002"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - amplifier
+        - display
+        - projector
+        - speaker
+        - DSP
+        - switcher
+        - extender
+        - camera
+        - microphone
+        - mixer
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: specs
+    attributes:
+      label: Specifications
+      description: Key specs as name: value pairs, one per line
+      placeholder: |
+        Power: 1200W @ 4Ω (stereo)
+        Frequency Response: 20Hz-20kHz
+        THD: <0.5%
+    validations:
+      required: true
+  - type: textarea
+    id: tags
+    attributes:
+      label: Tags
+      description: Relevant tags, one per line
+      placeholder: |
+        amplifier
+        dante
+        commercial
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional information
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Link to manufacturer page or datasheet
+      placeholder: "https://www.crownaudio.com/..."
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: I understand that accepted equipment data will be licensed under CC BY-SA 4.0
+          required: true
